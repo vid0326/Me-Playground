@@ -1,0 +1,313 @@
+{
+	"info": {
+		"_postman_id": "a1b2c3d4-e5f6-4a7b-8c9d-2f3a4b5c6d7e",
+		"name": "Me-Playground (Basic Auth)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health",
+			"item": [
+				{
+					"name": "Health Check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/health",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "Get All Projects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/projects?page=1&limit=3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter Projects by Skill",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/projects?skill=React",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects"
+							],
+							"query": [
+								{
+									"key": "skill",
+									"value": "React"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Skills",
+			"item": [
+				{
+					"name": "Get Top Skills",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/skills/top?limit=5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"skills",
+								"top"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search for Skills",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/skills/search?q=node",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"skills",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "node"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Get All Profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/profile",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Public Profile by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/profile/{{profileId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"profile",
+								"{{profileId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Profile (Auth Required)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{adminPass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{adminUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Vidhut Raushan\",\n    \"email\": \"vidhut.raushan@example.com\",\n    \"education\": [\n        {\n            \"institution\": \"NIT Nagaland\",\n            \"degree\": \"B.Tech CSE\",\n            \"year\": 2026\n        }\n    ],\n    \"links\": {\n        \"github\": \"https://github.com/your-username\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/profile",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile by ID (Auth Required)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{adminPass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{adminUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Vidhut Raushan (Updated)\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/profile/{{profileId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"profile",
+								"{{profileId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Profile by ID (Auth Required)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{adminPass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{adminUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/profile/{{profileId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"profile",
+								"{{profileId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5000/api"
+		},
+		{
+			"key": "profileId",
+			"value": ""
+		},
+		{
+			"key": "adminUser",
+			"value": "admin"
+		},
+		{
+			"key": "adminPass",
+			"value": "your-secret-password"
+		}
+	]
+}
