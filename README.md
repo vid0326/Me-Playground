@@ -146,3 +146,4 @@ This project is optimized for deployment on Vercel.
 - **GitHub:** https://github.com/vid0326/Me-Playground
 
 *Deployed on Vercel*
+*Resume*--https://drive.google.com/file/d/156tEZtUksZysDbTW2Di8dQvoitGexFWq/view?usp=sharing
