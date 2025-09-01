@@ -7,7 +7,7 @@ import ProjectList from './components/ProjectList';
 import Search from './components/Search';
 
 
-const API_URL = "http://localhost:5000"
+const API_URL = "https://me-playground.onrender.com"
 
 function App() {
     const [profile, setProfile] = useState(null);
