@@ -17,7 +17,7 @@ RESTful API - Clean, documented API endpoints for external integration or headle
 
 Responsive Design - A mobile-first, modern UI built with Tailwind CSS for a great experience on any device.
 
-🏗️ Architecture
+🏗️ **Architecture**
 ┌─────────────────┐      ┌─────────────────┐      ┌─────────────────┐
 │                 │      │                 │      │                 │
 │   Frontend      │──────│     Backend     │──────│    Database     │
