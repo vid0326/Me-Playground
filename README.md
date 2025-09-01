@@ -142,7 +142,7 @@ This project is optimized for deployment on Vercel.
 
 **Vidhut Raushan**
 
-- **Email:** vidhutraushan9@gmail.com
+- **Email:** vidhut35@gmail.com
 - **GitHub:** https://github.com/vid0326/Me-Playground
 
 *Deployed on Vercel*
